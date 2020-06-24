@@ -6,5 +6,6 @@ export interface Person {
     known_for_department: string;
     birthday: string;
     place_of_birth: string;
-    popularity: number; 
+    popularity: number;
+    homepage: string;
 }

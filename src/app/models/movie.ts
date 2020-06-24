@@ -16,6 +16,7 @@ export interface Movie {
     tagline: string;
     runtime: number;
     homepage: string;
+    revenue: any;
 }
 
 export interface Genre {
