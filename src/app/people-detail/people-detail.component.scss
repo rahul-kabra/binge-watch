@@ -1,0 +1,677 @@
+#people-wrapper {
+    background: var(--wrapper-background);
+    padding: 30px;
+}
+
+#people-container {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(100px, 100px));
+    grid-template-rows: repeat(9, minmax(75px, 75px));
+    justify-content: center;
+}
+
+#navbar {
+    grid-row: 1 / 10;
+    grid-column: 1 / 2;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 15px 10px;
+    display: grid;
+    grid-template-columns: 75px;
+    grid-template-rows: repeat(9, minmax(75px, 75px));
+    background: var(--navbar);
+    color: var(--navbar-elements);
+}
+
+#navbar div {
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar-empty-gutter {
+    grid-row: 5 / 8;
+    grid-column: 1 / 2;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item .icon {
+    font-size: 28px;
+}
+
+.nav-menu-item {
+    text-decoration: none;
+    color: inherit;
+}
+
+#scrollable-content {
+    grid-row: 1 / 10;
+    grid-column: 2 / 13;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 675px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: repeat(11, minmax(100px, 100px));
+    grid-template-rows: repeat(18, minmax(75px, 75px));
+}
+
+#back {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    background: var(--bg);
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--buttons);
+}
+
+#back:hover {
+    background: var(--button-hover);
+}
+
+#empty-top-gutter {
+    grid-row: 1 / 2;
+    grid-column: 2 / 9;
+    padding: 10px;
+    background: var(--bg);
+}
+
+#people-poster {
+    grid-row: 1 / 7;
+    grid-column: 9 / 12;
+    border-top-right-radius: 5px;
+    background: var(--bg);
+}
+
+#people-poster img {
+    border-top-right-radius: 5px;
+}
+
+#people-description {
+    grid-row: 2 / 7;
+    grid-column: 1 / 9;
+    background: var(--bg);
+    padding: 10px 30px;
+}
+
+#people-description .title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#person-info {
+    grid-row: 7 / 8;
+    grid-column: 1 / 12;
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    background: var(--bg);
+    padding: 10px 30px;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: var(--headings);
+}
+
+.overview {
+    color: var(--font-light);
+    font-size: 18px;
+}
+
+#made-by {
+    grid-row: 18 / 19;
+    grid-column: 1 / 12;
+    background: var(--bg);
+    padding: 30px;
+    border-bottom-right-radius: 5px;
+    color: var(--font-light);
+}
+
+.small-title {
+    color: var(--other-headings);
+    font-size: 12px;
+}
+
+.people-info-data {
+    color: var(--font-dark);
+    font-size: 12px;
+}
+
+#known-movies-container {
+    grid-row: 8 / 13;
+    grid-column: 1 / 12;
+    background: var(--bg);
+    padding: 30px;
+}
+
+#known-shows-container {
+    grid-row: 13 / 18;
+    grid-column: 1 / 12;
+    background: var(--bg);
+    padding: 30px;
+}
+
+#known-movies,
+#known-shows {
+    display: grid;
+    grid-template-columns: repeat(5, 175px);
+    grid-template-rows: 275px;
+    grid-gap: 30px;
+}
+
+.movie-title,
+.show-title {
+    font-size: 13px;
+    color: var(--font-dark);
+}
+
+.movie-card,
+.show-card {
+    display: grid;
+    grid-template-columns: 175px;
+    grid-template-rows: 1fr 0.2fr;
+    cursor: pointer;
+}
+
+.cast-title {
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    color: var(--headings);
+}
+
+.small-menu-item-desc {
+    font-size: 10px;
+}
+
+#about {
+    grid-row: 8 / 10;
+    align-self: center;
+}
+
+#made-by a {
+    text-decoration: none;
+    color: var(--font-light);
+}
+
+i.fa.fa-heart {
+    color: var(--other-headings);
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1200px) {
+    #people-container {
+        display: grid;
+        grid-template-columns: 0.1fr 1fr !important;
+    }
+
+    #scrollable-content {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(17, minmax(75px, 75px));
+    }
+
+    #back {
+        grid-row: 1 / 2 !important;
+        grid-column: 1 / 2 !important;
+    }
+
+    #empty-top-gutter {
+        grid-row: 1 / 2 !important;
+        grid-column: 2 / 6 !important;
+    }
+
+    #people-poster {
+        grid-row: 1 / 7 !important;
+        grid-column: 6 / 8 !important;
+    }
+
+    #people-description {
+        grid-row: 2 / 7 !important;
+        grid-column: 1 / 6 !important;
+    }
+
+    #person-info {
+        grid-row: 7 / 9 !important;
+        grid-column: 1 / 8 !important;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    #known-movies-container {
+        grid-row: 9 / 19 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #known-movies {
+        grid-template-columns: repeat(auto-fit, 175px) !important;
+        grid-template-rows: repeat(auto-fit, 275px) !important;
+    }
+
+    #known-shows-container {
+        grid-row: 19 / 29 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #known-shows {
+        grid-template-columns: repeat(auto-fit, 175px) !important;
+        grid-template-rows: repeat(auto-fit, 275px) !important;
+    }
+
+    #made-by {
+        grid-row: 29 / 30 !important;
+        grid-column: 1 / 8 !important;
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1100px) {
+    #people-container {
+        display: grid;
+        grid-template-columns: 0.1fr 1fr !important;
+    }
+
+    #scrollable-content {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(17, minmax(75px, 75px));
+    }
+
+    #back {
+        grid-row: 1 / 2 !important;
+        grid-column: 1 / 2 !important;
+    }
+
+    #empty-top-gutter {
+        grid-row: 1 / 2 !important;
+        grid-column: 2 / 5 !important;
+    }
+
+    #people-poster {
+        grid-row: 1 / 7 !important;
+        grid-column: 5 / 8 !important;
+    }
+
+    #people-description {
+        grid-row: 2 / 7 !important;
+        grid-column: 1 / 5 !important;
+    }
+
+    #person-info {
+        grid-row: 7 / 9 !important;
+        grid-column: 1 / 8 !important;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 200px);
+        grid-template-rows: 75px;
+        justify-items: center;
+        text-align: center;
+    }
+
+    #known-movies-container {
+        grid-row: 9 / 19 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #known-movies {
+        grid-template-columns: repeat(auto-fit, 175px) !important;
+        grid-template-rows: repeat(auto-fit, 275px) !important;
+    }
+
+    #known-shows-container {
+        grid-row: 19 / 29 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #known-shows {
+        grid-template-columns: repeat(auto-fit, 175px) !important;
+        grid-template-rows: repeat(auto-fit, 275px) !important;
+    }
+
+    #made-by {
+        grid-row: 29 / 30 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    .title {
+        font-size: 20px !important;
+    }
+
+    .overview {
+        font-size: 14px !important;
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 900px) {
+    #people-container {
+        display: grid;
+        grid-template-columns: 0.1fr 1fr !important;
+    }
+
+    #scrollable-content {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(17, minmax(75px, 75px));
+    }
+
+    #back {
+        grid-row: 1 / 2 !important;
+        grid-column: 1 / 2 !important;
+    }
+
+    #empty-top-gutter {
+        grid-row: 1 / 2 !important;
+        grid-column: 2 / 8 !important;
+    }
+
+    #people-poster {
+        grid-row: 2 / 8 !important;
+        grid-column: 1 / 8 !important;
+        text-align: center;
+    }
+
+    #people-description {
+        grid-row: 8 / 12 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #person-info {
+        grid-row: 12 / 14 !important;
+        grid-column: 1 / 8 !important;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 150px);
+        grid-template-rows: 65px;
+        justify-items: center;
+        text-align: center;
+    }
+
+    #known-movies-container {
+        grid-row: 14 / 24 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #known-movies {
+        grid-template-columns: repeat(auto-fit, 175px) !important;
+        grid-template-rows: repeat(auto-fit, 275px) !important;
+    }
+
+    #known-shows-container {
+        grid-row: 24 / 34 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #known-shows {
+        grid-template-columns: repeat(auto-fit, 175px) !important;
+        grid-template-rows: repeat(auto-fit, 275px) !important;
+    }
+
+    #made-by {
+        grid-row: 34 / 35 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    .title {
+        font-size: 20px !important;
+    }
+
+    .overview {
+        font-size: 14px !important;
+    }
+}
+
+@media screen and (min-width: 511px) and (max-width: 700px) {
+    #people-container {
+        display: grid;
+        grid-template-columns: 0.1fr 1fr !important;
+    }
+
+    #scrollable-content {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(17, minmax(75px, 75px));
+    }
+
+    #back {
+        grid-row: 1 / 2 !important;
+        grid-column: 1 / 2 !important;
+    }
+
+    #empty-top-gutter {
+        grid-row: 1 / 2 !important;
+        grid-column: 2 / 8 !important;
+    }
+
+    #people-poster {
+        grid-row: 2 / 8 !important;
+        grid-column: 1 / 8 !important;
+        text-align: center;
+    }
+
+    #people-description {
+        grid-row: 8 / 14 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #person-info {
+        grid-row: 14 / 17 !important;
+        grid-column: 1 / 8 !important;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 150px);
+        grid-template-rows: 65px;
+        justify-items: center;
+        text-align: center;
+    }
+
+    #known-movies-container {
+        grid-row: 17 / 27 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #known-movies {
+        grid-template-columns: repeat(auto-fit, 175px) !important;
+        grid-template-rows: repeat(auto-fit, 275px) !important;
+    }
+
+    #known-shows-container {
+        grid-row: 27 / 37 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #known-shows {
+        grid-template-columns: repeat(auto-fit, 175px) !important;
+        grid-template-rows: repeat(auto-fit, 275px) !important;
+    }
+
+    #made-by {
+        grid-row: 37 / 38 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    .title {
+        font-size: 20px !important;
+    }
+
+    .overview {
+        font-size: 14px !important;
+    }
+}
+
+@media screen and (min-width: 411px) and (max-width: 510px) {
+    #people-wrapper {
+        padding: 10px;
+    }
+
+    #people-container {
+        display: grid;
+        grid-template-columns: 0.1fr 1fr !important;
+    }
+
+    #scrollable-content {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(17, minmax(75px, 75px));
+    }
+
+    #back {
+        grid-row: 1 / 2 !important;
+        grid-column: 1 / 2 !important;
+    }
+
+    #empty-top-gutter {
+        grid-row: 1 / 2 !important;
+        grid-column: 2 / 8 !important;
+    }
+
+    #people-poster {
+        grid-row: 2 / 8 !important;
+        grid-column: 1 / 8 !important;
+        text-align: center;
+    }
+
+    #people-description {
+        grid-row: 8 / 15 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #person-info {
+        grid-row: 15 / 18 !important;
+        grid-column: 1 / 8 !important;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 100px);
+        grid-template-rows: 55px;
+        justify-items: center;
+        text-align: center;
+    }
+
+    #known-movies-container {
+        grid-row: 18 / 28 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #known-movies {
+        grid-template-columns: repeat(auto-fit, 175px) !important;
+        grid-template-rows: repeat(auto-fit, 275px) !important;
+    }
+
+    #known-shows-container {
+        grid-row: 28 / 38 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #known-shows {
+        grid-template-columns: repeat(auto-fit, 175px) !important;
+        grid-template-rows: repeat(auto-fit, 275px) !important;
+    }
+
+    #made-by {
+        grid-row: 38 / 39 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    .title {
+        font-size: 20px !important;
+    }
+
+    .overview {
+        font-size: 14px !important;
+    }
+
+    #genres span {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 340px) and (max-width: 410px) {
+    #people-wrapper {
+        padding: 0px;
+    }
+
+    #people-container {
+        display: grid;
+        grid-template-columns: 0.1fr 1fr !important;
+    }
+
+    #scrollable-content {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(17, minmax(75px, 75px));
+    }
+
+    #back {
+        grid-row: 1 / 2 !important;
+        grid-column: 1 / 2 !important;
+    }
+
+    #empty-top-gutter {
+        grid-row: 1 / 2 !important;
+        grid-column: 2 / 8 !important;
+    }
+
+    #people-poster {
+        grid-row: 2 / 8 !important;
+        grid-column: 1 / 8 !important;
+        text-align: center;
+    }
+
+    #people-poster img {
+        width: 100%;
+    }
+
+    #people-description {
+        grid-row: 8 / 18 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #person-info {
+        grid-row: 18 / 21 !important;
+        grid-column: 1 / 8 !important;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 120px);
+        grid-template-rows: 65px;
+        justify-items: center;
+        text-align: center;
+    }
+
+    #known-movies-container {
+        grid-row: 21 / 31 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #known-movies {
+        grid-template-columns: repeat(auto-fit, 175px) !important;
+        grid-template-rows: repeat(auto-fit, 275px) !important;
+    }
+
+    #known-shows-container {
+        grid-row: 31 / 41 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    #known-shows {
+        grid-template-columns: repeat(auto-fit, 175px) !important;
+        grid-template-rows: repeat(auto-fit, 275px) !important;
+    }
+
+    #made-by {
+        grid-row: 41 / 42 !important;
+        grid-column: 1 / 8 !important;
+    }
+
+    .title {
+        font-size: 20px !important;
+    }
+
+    .overview {
+        font-size: 14px !important;
+    }
+
+    #genres span {
+        display: block;
+        margin-bottom: 10px;
+    }
+}

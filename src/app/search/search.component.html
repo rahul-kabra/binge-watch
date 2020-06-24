@@ -1,0 +1,70 @@
+<div id="search-wrapper">
+  <div id="search-container">
+
+    <aside id="navbar" class="sidebar">
+      <div class="site-logo" title="Binge Watch" (click)="goToAboutPage()">
+        <img src="assets/site-logo.png">
+      </div>
+      <a class="nav-menu-item" routerLink="/movies" routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <div class="nav-item" title="Movies">
+          <i class="fa fa-video-camera icon"></i>
+          <span class="small-menu-item-desc">Movies</span>
+        </div>
+      </a>
+      <a class="nav-menu-item" routerLink="/shows" routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <div class="nav-item" title="TV Shows">
+          <i class="fa fa-tv icon"></i>
+          <span class="small-menu-item-desc">Shows</span>
+        </div>
+      </a>
+      <a class="nav-menu-item" routerLink="/search" routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <div class="nav-item" title="Search">
+          <i class="fa fa-search icon"></i>
+          <span class="small-menu-item-desc">Search</span>
+        </div>
+      </a>
+      <div class="navbar-empty-gutter">
+
+      </div>
+      <a id="about" class="nav-menu-item" routerLink="/about" routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <div class="nav-item" title="About">
+          <i class="fa fa-info-circle icon"></i>
+          <span class="small-menu-item-desc">About</span>
+        </div>
+      </a>
+    </aside>
+
+    <div id="scrollable-content" infiniteScroll [infiniteScrollDistance]="0" [infiniteScrollThrottle]="1000"
+      (scrolled)="onScroll()" [scrollWindow]="false">
+      <div id="empty-gutter">
+
+      </div>
+      <div id="search-desc">
+        This is one single place where you can search everything. Go on then!
+      </div>
+      <div id="search">
+        <input [formControl]="queryField" type="text" id="keyword" placeholder='Search...' />
+        <i class="fa fa-search"></i>
+      </div>
+      <div *ngIf="results.length > 0" id="movie-list-container">
+        <div class="movie-card" *ngFor="let result of results" (click)="goToDetail(result)">
+          <div class="movie-poster">
+            <img src="https://image.tmdb.org/t/p/w185{{ result?.poster_path }}" (error)="setDefaultPosterPic($event)"
+              alt="{{ result?.title ? result.title : result.name }}">
+          </div>
+          <div class="movie-title">
+            <label>{{ result?.title ? result.title : result.name }}</label>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="results.length === 0" id="empty-list-container">
+        <p>No search parameters entered</p>
+      </div>
+    </div>
+
+  </div>
+</div>

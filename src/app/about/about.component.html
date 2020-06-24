@@ -1,0 +1,63 @@
+<div id="about-wrapper">
+  <div id="about-container">
+
+    <aside id="navbar" class="sidebar">
+      <div class="site-logo" title="Binge Watch" (click)="goToAboutPage()">
+        <img src="assets/site-logo.png">
+      </div>
+      <a class="nav-menu-item" routerLink="/movies" routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <div class="nav-item" title="Movies">
+          <i class="fa fa-video-camera icon"></i>
+          <span class="small-menu-item-desc">Movies</span>
+        </div>
+      </a>
+      <a class="nav-menu-item" routerLink="/shows" routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <div class="nav-item" title="TV Shows">
+          <i class="fa fa-tv icon"></i>
+          <span class="small-menu-item-desc">Shows</span>
+        </div>
+      </a>
+      <a class="nav-menu-item" routerLink="/search" routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <div class="nav-item" title="Search">
+          <i class="fa fa-search icon"></i>
+          <span class="small-menu-item-desc">Search</span>
+        </div>
+      </a>
+      <div class="navbar-empty-gutter">
+
+      </div>
+      <a id="about" class="nav-menu-item" routerLink="/about" routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <div class="nav-item" title="About">
+          <i class="fa fa-info-circle icon"></i>
+          <span class="small-menu-item-desc">About</span>
+        </div>
+      </a>
+    </aside>
+
+    <div id="scrollable-content">
+      <p>Welcome movie buffs 👋</p>
+      <p>Binge Watch is your one stop shop for anything and everything related to movies, tv shows, celebs etc. and
+        provides a very thorough and comprehensive detail about everything related to the former. </p>
+      <p class="title">Tidbits</p>
+      <p>For the sake of convenience and also not to overwhelm the end user, the number of similar movies or shows in
+        the detail specific pages has been restricted to 5. Also, this ensures that only the top matching results are
+        returned.</p>
+      <p>For the movies list, shows list and search screens infinite scrolling has been implemented for an enhanced user
+        experience. This does away with the problem of having to click on the different page numbers to naviagte to
+        different pages.</p>
+      <p class="title">Credits</p>
+      <p>Binge Watch is powered by the fantastic <a href="https://developers.themoviedb.org/3" target="_blank">TMDb
+          API.</a></p>
+      <p>Icons have been provided by <a href="https://www.flaticon.com/authors/flat-icons" target="_blank">Flat
+          Icons</a></p>
+      <p class="title">Github Repo</p>
+      <p>The entire source code is available on my Github repo <a href="https://rahul-kabra.github.io/binge-watch/"
+          target="_blank"><i class="fa fa-github"></i></a></p>
+    </div>
+
+  </div>
+</div>

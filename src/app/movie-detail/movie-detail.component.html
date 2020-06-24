@@ -1,0 +1,140 @@
+<div id="movie-wrapper">
+  <div id="movie-container">
+
+    <aside id="navbar" class="sidebar">
+      <div class="site-logo" title="Binge Watch" (click)="goToAboutPage()">
+        <img src="assets/site-logo.png">
+      </div>
+      <a class="nav-menu-item" routerLink="/movies" routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <div class="nav-item" title="Movies">
+          <i class="fa fa-video-camera icon"></i>
+          <span class="small-menu-item-desc">Movies</span>
+        </div>
+      </a>
+      <a class="nav-menu-item" routerLink="/shows" routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <div class="nav-item" title="TV Shows">
+          <i class="fa fa-tv icon"></i>
+          <span class="small-menu-item-desc">Shows</span>
+        </div>
+      </a>
+      <a class="nav-menu-item" routerLink="/search" routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <div class="nav-item" title="Search">
+          <i class="fa fa-search icon"></i>
+          <span class="small-menu-item-desc">Search</span>
+        </div>
+      </a>
+      <div class="navbar-empty-gutter">
+
+      </div>
+      <a id="about" class="nav-menu-item" routerLink="/about" routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <div class="nav-item" title="About">
+          <i class="fa fa-info-circle icon"></i>
+          <span class="small-menu-item-desc">About</span>
+        </div>
+      </a>
+    </aside>
+
+    <div id="scrollable-content">
+      <div id="back" (click)="navigateToHome()">
+        <i class="fa fa-arrow-left"></i>
+      </div>
+      <div id="empty-top-gutter">
+
+      </div>
+      <div id="movie-poster">
+        <img src="https://image.tmdb.org/t/p/w300/{{ movie?.poster_path }}" (error)="setDefaultPosterPic($event)"
+          alt="{{ movie?.title }}">
+      </div>
+      <div id="movie-description">
+        <p class="title" *ngIf="movie?.homepage">
+          <a href="{{ movie?.homepage }}">{{ movie?.title | uppercase}}</a>
+        </p>
+        <p class="title" *ngIf="!movie?.homepage">
+          {{ movie?.title | uppercase}}
+        </p>
+        <p class="overview">{{ movie?.overview }}</p>
+        <div class="quote">{{ movie?.tagline }}</div>
+      </div>
+      <div id="genre-info">
+        <div id="genres">
+          <span id="genre-{{ genre?.name | lowercase}}" class="genre" *ngFor="let genre of genres">
+            {{ genre.name }}
+          </span>
+        </div>
+      </div>
+      <div id="movie-info">
+        <div id="release-date">
+          <p class="small-title">RELEASED</p>
+          <p class="movie-info-data">{{ movie?.release_date }}</p>
+        </div>
+        <div id="running-time">
+          <p class="small-title">LENGTH</p>
+          <p class="movie-info-data">{{ movie?.runtime | minutesToHour }}</p>
+        </div>
+        <div id="director">
+          <p class="small-title">DIRECTOR</p>
+          <p class="movie-info-data">{{ director?.name }}</p>
+        </div>
+        <div id="revenue">
+          <p class="small-title">REVENUE</p>
+          <p class="movie-info-data">{{ movie?.revenue | numberUnitConverter }}</p>
+        </div>
+      </div>
+      <div id="other-info">
+        <div id="average-vote">
+          <p class="small-title">AVG VOTE</p>
+          <p class="people-info-data">{{ movie?.vote_average }}</p>
+        </div>
+        <div id="total-votes">
+          <p class="small-title">VOTES</p>
+          <p class="people-info-data">{{ movie?.vote_count }}</p>
+        </div>
+        <div id="popularity">
+          <p class="small-title">POPULARITY</p>
+          <p class="people-info-data">{{ movie?.popularity }}</p>
+        </div>
+      </div>
+      <div id="cast-container">
+        <p class="cast-title">The Cast</p>
+        <div id="cast">
+          <div class="cast-info" *ngFor="let person of cast" (click)="goToPersonDetail(person.id)">
+            <div id="cast-thumbnail">
+              <img class="thumbnail-pic" src="https://image.tmdb.org/t/p/w185/{{ person?.profile_path }}"
+                (error)="setDefaultPersonPic($event, person)" alt="{{ person?.name }}">
+            </div>
+            <p class="cast-name">
+              {{ person?.name }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="similar-movies-container">
+        <p class="cast-title">Similar Movies</p>
+        <div id="similar-movies" *ngIf="similarMovies.length > 0">
+          <div class="movie-card" *ngFor="let similarMovie of similarMovies"
+            (click)="goToMovieDetail(similarMovie?.id)">
+            <div class="movie-poster">
+              <img src="https://image.tmdb.org/t/p/w154{{ similarMovie?.poster_path }}"
+                (error)="setDefaultSmallPosterPic($event)" alt="{{ similarMovie?.title }}">
+            </div>
+            <div class="movie-title">
+              <label>{{ similarMovie?.title }}</label>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="similarMovies.length === 0">
+          No similar movies found
+        </div>
+      </div>
+      <div id="made-by">
+        Curated with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://github.com/rahul-kabra"
+          target="_blank">Rahul</a>
+      </div>
+    </div>
+
+  </div>
+</div>

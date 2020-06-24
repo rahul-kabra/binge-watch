@@ -1,0 +1,51 @@
+/* Firefox Scrollbar Hack */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #1f4068 #f2a365;
+}
+
+/* Chrome/Edge/Safari Scrollbar Hack */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f2a365;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #1f4068;
+    border-radius: 20px;
+    border: 3px solid #f2a365;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Quando', serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --wrapper-background: #115173;
+    --navbar: #022c43;
+    --navbar-elements: #ededed;
+    --bg: #053f5e;
+    --headings: #ffd700;
+    --other-headings: #e43f5a;
+    --buttons: #e2894e;
+    --button-hover: #174c68;
+    --active-menu: #f73859;
+    --font-light: #f0ece2;
+    --font-dark: #979797;
+    --genre: #e14594;
+}
+
+.site-logo {
+    padding: 0 7px !important;
+    margin-top: -5px !important;
+    cursor: pointer;
+}
